@@ -13,6 +13,6 @@ data class TransactionData(
     val product: ProductData
 )
 
-data class ProductData(val favicon: List<IconData>)
+data class ProductData(val favicon: List<IconData>, val title: String)
 
 data class IconData(val url: String)

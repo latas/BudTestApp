@@ -4,6 +4,7 @@ import com.bud.app.core.data.Result
 import io.reactivex.Observable
 
 data class Transaction(
+    val title: String,
     val description: String,
     val amount: String,
     val date: String,

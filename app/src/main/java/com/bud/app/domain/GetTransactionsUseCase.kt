@@ -36,6 +36,7 @@ class GetTransactionsUseCase @Inject constructor(
     private fun mapToTransactions(data: TransactionsResponse): List<Transaction> =
         data.data.transactions.flatten().map {
             Transaction(
+                it.product.title,
                 it.description,
                 amountFormatter.format(it.amount),
                 it.date,

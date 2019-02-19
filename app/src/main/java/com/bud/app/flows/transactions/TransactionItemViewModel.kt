@@ -11,7 +11,9 @@ data class TransactionItemViewModel(private val transaction: Transaction) {
 
     val imageUrl = transaction.imageUrl
 
-    val title = transaction.description
+    val title = transaction.title
+
+    val description = transaction.description
 
     val price = transaction.amount
 
