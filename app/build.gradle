@@ -55,8 +55,5 @@ dependencies {
     implementation "${library.glide}"
 
     testImplementation "${library.junit}"
-    testImplementation "${library.mockito}"
-    testImplementation "${library.arch_core_testing}"
-    testImplementation "${library.okio}"
-    testImplementation "${library.mockwebserver}"
+    
 }

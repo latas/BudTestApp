@@ -22,7 +22,6 @@ fun ImageView.setImageUrl(url: String) {
 fun TextView.textColor(textColor: Int) {
     if (textColor == 0)
         return
-    this.let {
-        it.setTextColor(ContextCompat.getColor(it.context, textColor))
-    }
+    setTextColor(ContextCompat.getColor(context, textColor))
+
 }
