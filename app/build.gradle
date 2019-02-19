@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: "$rootProject.projectDir/libraries.gradle"
+def library = ext.library
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.bud.app"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'BASE_URL', '"http://35.230.147.152/"'
+        }
+        debug {
+            debuggable true
+            buildConfigField 'String', 'BASE_URL', '"http://35.230.147.152/"'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "${library.kotlin}"
+    implementation "${library.constraintlayout}"
+    implementation "${library.recycler}"
+    implementation "${library.support_appcompat}"
+
+    implementation "${library.lifecycle_extension}"
+
+    implementation "${library.rxAndroid}"
+    implementation "${library.rxKotlin}"
+    implementation "${library.dagger}"
+    implementation "${library.dagger_android}"
+    implementation "${library.dagger_android_support}"
+    kapt "${library.dagger_annotation_processor}"
+    kapt "${library.dagger_compiler}"
+    implementation "${library.retrofit}"
+    implementation "${library.retrofitGson}"
+    implementation "${library.retrofitRx}"
+    implementation "${library.okhttp3_logging}"
+    implementation "${library.glide}"
+
+    testImplementation "${library.junit}"
+    testImplementation "${library.mockito}"
+    testImplementation "${library.arch_core_testing}"
+    testImplementation "${library.okio}"
+    testImplementation "${library.mockwebserver}"
+}

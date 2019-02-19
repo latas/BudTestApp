@@ -1,0 +1,45 @@
+ext.version = [
+        support_appcompat  : "1.0.2",
+        constraintlayout   : "2.0.0-alpha2",
+        recycler           : "1.0.0",
+        lifecycle_extension: "2.0.0",
+        dagger             : "2.16",
+        rx                 : "2.0.1",
+        rxKotlin           : "2.2.0",
+        retrofit           : "2.4.0",
+        mockito            : "2.19.1",
+        mockwebserver      : "3.11.0",
+        okio               : "1.14.1",
+        okhttp3_interceptor: "3.8.0",
+        glide              : "4.9.0",
+        junit              : "4.12"
+]
+
+def version = ext.version
+
+ext.library = [
+        kotlin                     : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+        support_appcompat          : "androidx.appcompat:appcompat:${version.support_appcompat}",
+        constraintlayout           : "androidx.constraintlayout:constraintlayout:${version.constraintlayout}",
+        recycler                   : "androidx.recyclerview:recyclerview:${version.recycler}",
+        junit                      : "junit:junit:${version.junit}",
+        rxAndroid                  : "io.reactivex.rxjava2:rxandroid:${version.rx}",
+        rxKotlin                   : "io.reactivex.rxjava2:rxkotlin:${version.rxKotlin}",
+        retrofit                   : "com.squareup.retrofit2:retrofit:${version.retrofit}",
+        retrofitGson               : "com.squareup.retrofit2:converter-gson:${version.retrofit}",
+        retrofitRx                 : "com.squareup.retrofit2:adapter-rxjava2:${version.retrofit}",
+        dagger                     : "com.google.dagger:dagger:${version.dagger}",
+        dagger_android             : "com.google.dagger:dagger-android:${version.dagger}",
+        dagger_android_support     : "com.google.dagger:dagger-android-support:${version.dagger}",
+        dagger_annotation_processor: "com.google.dagger:dagger-android-processor:${version.dagger}",
+        dagger_compiler            : "com.google.dagger:dagger-compiler:${version.dagger}",
+        lifecycle_extension        : "androidx.lifecycle:lifecycle-extensions:${version.lifecycle_extension}",
+        arch_core_testing          : "androidx.arch.core:core-testing:${version.lifecycle_extension}",
+        okio                       : "com.squareup.okio:okio:${version.okio}",
+        okhttp3_logging            : "com.squareup.okhttp3:logging-interceptor:${version.okhttp3_interceptor}",
+        mockwebserver              : "com.squareup.okhttp3:mockwebserver:${version.mockwebserver}",
+        glide                      : "com.github.bumptech.glide:glide:${version.glide}",
+        glide_compiler             : "com.github.bumptech.glide:compiler:${version.glide}",
+        mockito                    : "org.mockito:mockito-core:${version.mockito}"
+
+]

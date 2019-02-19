@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="com.bud.app.flows.transactions.TransactionItemViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+        <ImageView
+                android:id="@+id/iv_transaction_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:imageUrl="@{viewModel.imageUrl}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="10dp"
+
+        />
+
+        <TextView
+                android:id="@+id/transaction_title"
+                app:layout_constraintStart_toEndOf="@+id/iv_transaction_icon"
+                android:layout_width="0dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@{viewModel.title}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/price"
+                android:layout_marginStart="5dp"
+                android:textColor="#4a4a4a"
+                tools:text="Shopping"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/price"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="£4.94"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginEnd="5dp"
+                android:text="@{viewModel.price}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:textColor="@{viewModel.priceColor}"
+                android:layout_height="wrap_content"/>
+
+
+        <TextView
+                android:id="@+id/date"
+                android:text="@{viewModel.date}"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

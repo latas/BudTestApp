@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BudTestApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="amount_gbp"> %1$s</string>
+</resources>
